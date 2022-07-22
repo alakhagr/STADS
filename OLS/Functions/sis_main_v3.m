@@ -29,6 +29,13 @@ function sis_output = sis_main_v3(sis_input, sis_T,i)
     sis_Pixel_Val_Mat = sis_nm_main(sis_photoelec_prof,sis_input);
     %disp(strcat('Simulation of--',num2str(i),'--th image Completed'))
 
+    %New code for without noise model
+%     Gain = sis_input.lls.Gain;
+%     sis_Pixel_Val_Mat=round(sis_photoelec_prof*Gain);
+%     % As the Pixel Values can't be outside the range [0, 1023]
+%     sis_Pixel_Val_Mat = max(sis_Pixel_Val_Mat, 0);
+%     sis_Pixel_Val_Mat = min(sis_Pixel_Val_Mat, 1023);
+    
     %% Ephemeris Model
 
    

@@ -4,6 +4,7 @@
 % Creating input file
 sis_gnrt_input_file;
 load('./SIS/Input and Constants/sis_input', "sis_input");
+%load('./Input and Constants/sis_input', "sis_input");
 % This also loads sis_input object
 
 %Preprocessing

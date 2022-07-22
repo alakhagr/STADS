@@ -3,15 +3,16 @@
 % This function preprocesses the SSP_Star_Catalogue.csv and stores it as sis_T
 
 % Read the Catalogue from SSP_Star_Catalogue.csv into the Table sis_T
-sis_T = readtable('SSP_Star_Catalogue.csv');
+%sis_T = readtable('SSP_Star_Catalogue.csv');
+sis_T = readtable('sis_SKY2000.csv');
 if (sis_input.gen.Debug_Run == 1); disp('Preprocessing: Catalogue Successfully Read'); end
 
 % Remove the following columns - 'SKY2000_ID'
-sis_T = removevars(sis_T,{'SKY2000_ID'});
+sis_T = removevars(sis_T,{'SSP_ID'});
 if (sis_input.gen.Debug_Run == 1); disp('Preprocessing: Catalogue Trimmed'); end
 
 % Trim Star Catalogue According to Star Magnitude
-sis_T = sis_T(sis_T.Vmag <= sis_input.gen.Magnitude_Limit, :);
+sis_T = sis_T(sis_T.Magnitude <= sis_input.gen.Magnitude_Limit, :);
 if (sis_input.gen.Debug_Run == 1); disp('Preprocessing: Catalogue Modified'); end
 
 % Rename Column Headers / Variable Names
